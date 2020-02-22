@@ -1,6 +1,6 @@
 # CDI - Computational Design Institute
 
-#WHITE PAPER
+# WHITE PAPER
 
 This open-source organization is based on core ethical values to create a better community in Design. It will focus on the creation of a gamefied framework where 
 - happiness is the goal.
