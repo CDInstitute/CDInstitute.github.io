@@ -21,7 +21,8 @@ Helping others will have always a higher value than working on your own.
 # LICENSE
 
 # HISTORY
-2015 - San Francisco Dynamo User Group
-2018 - San Francisco Computational Design User Group
-2019 - San Francisco Computational Design Institute
-2020 - Computational Design Institute
+
+- 2015 - San Francisco Dynamo User Group
+- 2018 - San Francisco Computational Design User Group
+- 2019 - San Francisco Computational Design Institute
+- 2020 - Computational Design Institute
