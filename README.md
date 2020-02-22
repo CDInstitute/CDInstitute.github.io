@@ -9,18 +9,18 @@ This open-source organization is based on core ethical values to create a better
 
 People should focus on the improvement of their efficiency, not only on the technological aspect but also on how we collaborate and work.
 
-#Logo
+# Logo
 Algorithm
 
-#Gamification
+# Gamification
 The work should be a goal and a reward-oriented. 
 
-##Reward Structure
+## Reward Structure
 Helping others will have always a higher value than working on your own.
 
-#LICENSE
+# LICENSE
 
-#HISTORY
+# HISTORY
 2015 - San Francisco Dynamo User Group
 2018 - San Francisco Computational Design User Group
 2019 - San Francisco Computational Design Institute
