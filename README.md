@@ -19,6 +19,7 @@ The work should be a goal and a reward-oriented.
 Helping others will have always a higher value than working on your own.
 
 # LICENSE
+MIT License 
 
 # HISTORY
 
