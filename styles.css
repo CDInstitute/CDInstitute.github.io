@@ -1,0 +1,33 @@
+@media print {
+    .screen-only{
+        display: none
+    }
+}
+@media (min-width : 1000px){
+    body {
+        background-color:rgb(33, 181, 240);
+    }
+}
+@media (max-width : 999px){
+    body {
+        background-color: slategray;
+    }
+} 
+@media (min-width : 1000px){
+    h1::before {
+        content:" ";
+    }
+}
+@media (max-width : 999px){
+    h1::before {
+        content:"-";
+    }
+}
+p {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+body {
+    text-align:center;
+}
