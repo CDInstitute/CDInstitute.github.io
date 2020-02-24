@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Computational Design Institute</title>
+        <title>CDI</title>
+        <!-- add icon link -->
+        <link rel = "icon" href =  "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" type = "image/x-icon"> 
     </head>
+    <style>
+        @media print {
+            .screen-only{
+                display: none
+            }
+        }
+        @media (min-width : 1000px){
+            body {
+                background-color:rgb(33, 181, 240);
+            }
+        }
+        @media (max-width : 999px){
+            body {
+                background-color: slategray;
+            }
+        } 
+        @media (min-width : 1000px){
+            h1::before {
+                content:" ";
+            }
+        }
+        @media (max-width : 999px){
+            h1::before {
+                content:"-";
+            }
+        }
+        p {
+            font-family: Arial, sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        body {
+            text-align:center;
+        }
+    </style>
     <body>
-        Hello, world! 
+        <p class = "screen-only">Computational Design Institute </p>
+        <div>
         This is the place for passionate about computational design 
-        in many different fields
+        in many different fields:
+        </div>
+        <ul>
+            <li>Architecture Engineering and Construction</li>
+            <li>Computer Science</li>
+            <li>Bio-Informatics</li>
+            <li>Quantum Computing</li>
+            <li>Mathematic and Statistic</li>
+            <li>Design</li>
+            <li>Game Development</li>
+            <li>Others</li>
+        </ul>
+        <h1>Hackathons</h1>
         <a href="hackathons.html">Hackathons</a>
+        <h1>About</h1>
+        <h3>Board Members</h3>
+        <a href="board.html">Board of Directors</a>
+        <h1>Example</h1>
+        <a href="example.html">Example</a>
     </body>
 </html>
