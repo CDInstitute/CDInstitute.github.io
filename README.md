@@ -10,7 +10,8 @@ This open-source organization is based on core ethical values to create a better
 People should focus on the improvement of their efficiency, not only on the technological aspect but also on how we collaborate and work.
 
 # Logo
-Algorithm
+The Algorithm will be open-source.
+Licensing system = credits to the creators of the idea, it can only be sold by the main creator. 
 
 # Gamification
 The work should be a goal and a reward-oriented. 

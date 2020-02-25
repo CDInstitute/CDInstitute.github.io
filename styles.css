@@ -24,10 +24,18 @@
     }
 }
 p {
+    border: 3px solid black;
     font-family: Arial, sans-serif;
     font-size: 28px;
     font-weight: bold;
 }
 body {
     text-align:center;
+}
+div{
+    background-color: darksalmon ;
+    width: 400px;
+    height: 100px;
+    margin: 50px;
+    padding: 20px;
 }
