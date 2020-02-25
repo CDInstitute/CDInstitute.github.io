@@ -1,0 +1,39 @@
+$color: rgb(179, 62, 62) ;
+
+div {
+    font-size: 14px;
+    color: $color;
+}
+
+div {
+    font-size: 18px;
+
+    p {
+        color: slateblue;;
+    }
+
+}
+
+%message {
+    font-family: sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 8px;
+    margin: 8px;
+}
+
+.AEC {
+    @extend %message;
+    background-color: rgb(75, 160, 75);
+}
+
+.CS {
+    @extend %message;
+    background-color: rgb(207, 160, 72);
+}
+
+.BI {
+    @extend %message;
+    background-color: rgb(187, 83, 83);
+}

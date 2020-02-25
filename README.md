@@ -28,3 +28,10 @@ MIT License
 - 2018 - San Francisco Computational Design User Group
 - 2019 - San Francisco Computational Design Institute
 - 2020 - Computational Design Institute
+
+# PACKAGE
+npm install -g sass (compile scss to css) you will need to run: https://sass-lang.com/install
+- sass styleshackathon.scss styleshackathon.css
+- sass --watch styleshackathon.scss styleshackathon.css (in order to automatically compile the scss to css)
+pip install open-browser 
+python -m pip install --upgrade pip
