@@ -38,4 +38,5 @@ div{
     height: 100px;
     margin: 50px;
     padding: 20px;
+    display: table ; margin:0 auto;
 }

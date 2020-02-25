@@ -30,8 +30,26 @@ MIT License
 - 2020 - Computational Design Institute
 
 # PACKAGE
+
+Project 0
 npm install -g sass (compile scss to css) you will need to run: https://sass-lang.com/install
 - sass styleshackathon.scss styleshackathon.css
 - sass --watch styleshackathon.scss styleshackathon.css (in order to automatically compile the scss to css)
+OPEN-BROWSER
 pip install open-browser 
+PIP
+pip3 install -r requirements.txt (file in the folder)
 python -m pip install --upgrade pip
+
+Project 1
+https://flask.palletsprojects.com/en/1.1.x/quickstart/
+Heroku
+Adminer
+Flask, Flask-Session, SQLAlchemy and psycopg2-binary from the requirement
+set FLASK_APP=application.py
+
+
+# VIDEO
+Project0 - https://www.youtube.com/watch?v=TN5OgfkpRRg
+Project1 - 
+It is focused on book in computational design space. 
