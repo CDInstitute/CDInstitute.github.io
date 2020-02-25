@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Hackahtons</title>
+        <!-- Adding Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <style>
         #top {
@@ -21,6 +23,11 @@
             font-weight: bold;
             color:lightslategray;
         }
+        .row > div {
+                padding: 20px;
+                background-color: steelblue;
+                border: 2px solid black;
+            }
     </style>
     <body>
         Hackathons
@@ -34,5 +41,20 @@
         <div id="bottom">
             This is the <span class="name">Bio-Informatics</span> Hackathon.
         </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    This is a section.
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    This is another section.
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    This is a third section.
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    This is a fourth section.
+                </div>
     </body>
 </html>
