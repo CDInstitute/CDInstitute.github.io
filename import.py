@@ -16,6 +16,8 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
+# Cleaning in the dataset is needed: remove the first raw, removing X from isbn, and others.
+
 def main():
     f = open("books.csv")
     reader = csv.reader(f)

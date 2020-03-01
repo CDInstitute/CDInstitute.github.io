@@ -31,6 +31,7 @@ def index():
     return render_template("index.html")
     # SELECT * FROM users WHERE ( username = username) AND (password = password)
     # SELECT * FROM users WHERE ( username = 'Alberto') AND (password = 'test')
+
 @app.route("/hello", methods=["POST"])
 def hello():
     name = request.form.get("name")
@@ -50,18 +51,27 @@ def review():
 #     books = db.execute("SELECT title, author, year FROM books").fetchall()
 #     for book in books:
 #         print(f"{book.title} by {book.author}, {book.year} year.")
-
 # if __name__ == "__main__":
-#     main()
+#      main()
 
-def main():
-    f = open("books.csv")
-    reader = csv.reader(f)
-    for isbn, title, author, year in reader:
-        db.execute("INSERT INTO books (isbn, title, author, year) VALUES (:isbn, :title, :author, :year)",
-                    {"isbn": isbn, "title": title, "author": author, "year": year})
-        print(f"Added book with this {title} from this {author} in this {year}.")
+@app.route("/search")
+def search() :
+    books = db.execute("SELECT * FROM books").fetchall()
+    return render_template("search.html", books=books)
+
+@app.route("/searchbook", methods=["POST"])
+def searchbook():
+    """Search a book."""
+
+    # Get form information.
+    name = request.form.get("name")
+    try:
+        book_isbn = int(request.form.get("book_isbn"))
+    except ValueError:
+        return render_template("error.html", message="Invalid book number.")
+
+    # Make sure the flight exists. Complete the if statement with a positive end
+    if db.execute("SELECT * FROM books WHERE isbn = :isbn", {"isbn": book_isbn}).rowcount == 0:
+        return render_template("error.html", message="No such book with that id.")
     db.commit()
-
-if __name__ == "__main__":
-    main()
+    return render_template("success.html")
