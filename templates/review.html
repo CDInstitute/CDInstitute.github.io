@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+   Reviews
+{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for review in reviews %}
+            <li>{{ review }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="{{ url_for('review') }}" method="post">
+        <input type="text" name="review" placeholder="Enter Review Here">
+        <button>Add Review</button>
+    </form>
+
+{% endblock %}

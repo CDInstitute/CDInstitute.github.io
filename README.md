@@ -47,6 +47,16 @@ Heroku
 Adminer
 Flask, Flask-Session, SQLAlchemy and psycopg2-binary from the requirement
 set FLASK_APP=application.py
+make sure to set DATABASE_URL=.... and set FLASK_DEBUG=1 and set FLASK_APP=name.py  FLASK_ENV=development on the CMD Terminal and not on Visual Studio Code
+
+CTRL+K+C note an entire code
+
+install psql (https://www.postgresql.org/ Version12) and use the Shell of psql
+psql DATABASE_URL and inser all the information requested
+\d in order to see the table created on the SQL command 
+After CREATE TABLE / INSERT / SELECT * FROM books we are sure we have that table
+
+python import.py it was done setting up the variable and cleaning the python code X as an exeption, and also the number 2 at the begginging. 
 
 
 # VIDEO

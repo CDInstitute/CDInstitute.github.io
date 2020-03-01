@@ -1,15 +1,16 @@
 {% extends "layout.html" %}
 
 {% block heading %}
-    Examples
+    Login Welcome Page
 {% endblock %}
 
 {% block body %}
 
     <form action="{{ url_for('hello') }}" method="post">
-        <input type="text" name="name" placeholder="User Name">
+        <input type="text" name="name" placeholder="Username">
         <input type="password" name="psw" placeholder="Password">
         <button>Enter</button>
     </form>
+    
 
 {% endblock %}
