@@ -18,12 +18,23 @@
         </div>
 
         <div class="form-group">
-            <input class="form-control" name="name" placeholder="Search for your book">
+            <input class="form-control" name="title" placeholder="Search for your book">
         </div>
 
         <div class="form-group">
             <button class="btn btn-primary">Search</button>
         </div>
-
     </form>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{{ url_for('book', book_isbn=book.isbn) }}">
+                    {{ book.title }} by {{ book.author }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+  
 {% endblock %}

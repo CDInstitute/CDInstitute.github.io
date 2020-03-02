@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+   Signup
+{% endblock %}
+
+{% block body %}
+<div class="form-group">
+    <form action="{{ url_for('hello') }}" method="get"></form>
+        <input type="text" name="name" placeholder="Username">
+        <input type="password" name="psw" placeholder="Password">
+        <button class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock %}
+
+    

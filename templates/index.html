@@ -5,12 +5,15 @@
 {% endblock %}
 
 {% block body %}
-
+<div class="form-group">
     <form action="{{ url_for('hello') }}" method="post">
         <input type="text" name="name" placeholder="Username">
         <input type="password" name="psw" placeholder="Password">
-        <button>Enter</button>
+        <button class="btn btn-primary">Enter</button>
     </form>
-    
 
+    <form action="{{ url_for('registration') }}" method="get">
+        <button class="btn btn-primary">Signup</button>
+    </form>
+</div)>   
 {% endblock %}
