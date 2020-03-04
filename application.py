@@ -4,10 +4,11 @@ import csv
 # make sure to set DATABASE_URL=.... and set FLASK_DEBUG=1 and set FLASK_APP=name.py  FLASK_ENV=development on the CMD Terminal and not on Visual Studio Code
 # CTRL+K+C note an entire code
 
-from flask import render_template, request, Flask, session
+from flask import render_template, request, Flask, session, jsonify
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from models import *
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
@@ -21,10 +22,20 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 #Session(app) #this line create issues set up the key
 
+###########SQL Alchemy ##############################
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db.init_app(app)
+
 
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
+
+
+####################################################
+################# DEFINING THE ROUTES ##############
+####################################################
 
 @app.route("/")
 def index():
@@ -35,11 +46,25 @@ def index():
     # SELECT * FROM users WHERE ( username = username) AND (password = password)
     # SELECT * FROM users WHERE ( username = 'Alberto') AND (password = 'test')
 
+
+##################################  REGISTER ########################################
+
 @app.route("/registration")
 def registration():
     # register = db.execute("INSERT INTO users (username, password) VALUES (:username, :password) ")
     return render_template("registration.html")
 #INSERT INTO THE DATABASE username and password
+# @app.route("/registration", method= ['POST'])
+# def registration():
+#     if 'username' in session:
+#         return redirect("/")
+#     username = request.form.get("username")
+#     password = request.form.get("password")
+#     if db.execute("SELECT * FROM users WHERE username = :username AND password = :password, {"username": username, "password": password}")
+#         return render_template("index.html", message = "User Already Exist", failed= True, success=False, ready=True)
+#     db.execute("INSERT INTO users (username, password) VALUES (:username, :password)", {"username": username, "password": password})
+#     db.commit()
+#     return render_template("index.html", message = "Account Created, Please log-in now", failed= False, success=True, ready=True)
 
 @app.route("/hello", methods=["POST"])
 def hello():
@@ -63,6 +88,9 @@ def review():
 #         print(f"{book.title} by {book.author}, {book.year} year.")
 # if __name__ == "__main__":
 #      main()
+
+
+######################  SEARCH ############################
 
 @app.route("/search")
 def search() :
@@ -105,6 +133,10 @@ def searchbook():
     db.commit()
     return render_template("success.html")
 
+
+############ OLD CODE ###############################
+
+
 # @app.route("/books")
 # def books():
 #     """Lists all books."""
@@ -123,4 +155,34 @@ def searchbook():
 # Get all reviews.
     # reviews = db.execute("SELECT name FROM reviews WHERE book_isbn = :book_isbn", {"book_isbn": book_isbn}).fetchall()
     # return render_template("book.html", book=book, reviews=reviews)
-    
+
+#####################################################
+####################           ######################
+###########             API               ###########
+####################           ######################
+#####################################################
+
+
+@app.route("/api/books/<int:book_isbn>")
+def book_api(book_isbn):
+    """Return details about a single book."""
+
+    # Make sure book exists.
+    book = Book.query.get(book_isbn)
+    if books is None:
+        return jsonify({"error": "Invalid book_isbn"}), 422
+
+    # Get all reviews.
+    reviews = book.reviews
+    comments = []
+    for review in reviews:
+        comments.append(review.comment)
+    return jsonify({
+            "title": book.title,
+            "author": book.author,
+            "year": book.duration,
+            "isbn": book.isbn,
+            "review_count": review.count,  #establish and create these parameters
+            "average_score": review.score  #establish and create these parameters
+        })
+
