@@ -27,6 +27,7 @@ MIT License
 - 2015 - San Francisco Dynamo User Group
 - 2018 - San Francisco Computational Design User Group
 - 2019 - San Francisco Computational Design Institute
+- 2020 - AIA Technical Committee San Francisco
 - 2020 - Computational Design Institute
 
 # PACKAGE
